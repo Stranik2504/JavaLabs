@@ -1,47 +1,34 @@
-import java.util.Scanner;
-
 public class Main {
-    private static final double ROUBLES_PER_YUAN = 11.91; // курс покупки
-    
     public static void main(String[] args) {
-        int yuan; // сумма денег в китайских юанях
+        Car car = new Car("Kamaz", "Not", "White", 2077);
+        car.To_String();
+        
+        car = new Car();
+        car.To_String();
+        
+        car = new Car("Audi", 2021);
+        car.To_String();
+        
+        System.out.println("\n");
+        System.out.println("---[Old values]---");
+        System.out.println("Model: " + car.getModel());
+        System.out.println("License: " + car.getLicense());
+        System.out.println("Color: " + car.getColor());
+        System.out.println("Year: " + car.getYear());
+        
+        car.setModel("Audi A7");
+        car.setLicense("Lol");
+        car.setColor("Non");
+        car.setYear(1997);
 
-        // Вывод тестовых данных для проверки правильности печати окончания кол-ва юаней
-        testYuanPrint();
+        System.out.println("\n");
+        System.out.println("---[New values]---");
+        System.out.println("Model: " + car.getModel());
+        System.out.println("License: " + car.getLicense());
+        System.out.println("Color: " + car.getColor());
+        System.out.println("Year: " + car.getYear());
         
-        Scanner input = new Scanner(System.in);
-        
-        // Получение количества юаней
-        System.out.print("Введите число юаней: ");
-        yuan = input.nextInt();
-        
-        printTextYuan(yuan);
-        
-        double roubles = ROUBLES_PER_YUAN * yuan; // сумма денег в российских рублях
-        
-        System.out.println(roubles);
-    }
-    
-    private static void printTextYuan(int yuan) {
-        String endText = "";
-        
-        if (yuan != 11 & yuan % 10 == 1) 
-            endText = "китайский юань";
-        else if ((2 <= yuan % 10 && yuan % 10 <= 4) &&
-            (yuan < 10 || yuan > 20)) 
-            endText = "китайских юаня";
-        else 
-            endText = "китайских юаней";
-        
-        System.out.println(yuan + " " + endText);
-    }
-    
-    private static void testYuanPrint() {
-        printTextYuan(0);
-        printTextYuan(1);
-        printTextYuan(3);
-        printTextYuan(5);
-        printTextYuan(11);
-        printTextYuan(100);
+        System.out.println("\n\nAge car: " + car.getAge());
     }
 }
+
