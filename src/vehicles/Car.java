@@ -1,17 +1,20 @@
 package vehicles;
 
-public class Car {
-    private String _ownerName;
-    private String _insuranceNumber;
+public class Car extends Vehicle {
     
-    protected String _engineType;
-
-    public String getOwnerName() { return _ownerName; }
-    public void setOwnerName(String ownerName) { _ownerName = ownerName; }
+    public Car() {
+        setModel("Generic");
+        setLicense("ABC123");
+        setColor("Black");
+        setYear(2020);
+        
+        setOwnerName("John Doe");
+        setInsuranceNumber("1234567890");
+        
+        _engineType = "Simple";
+    }
     
-    public String getInsuranceNumber() { return _insuranceNumber; }
-    public void setInsuranceNumber(String insuranceNumber) { _insuranceNumber = insuranceNumber; }
-    
-    public String getEngineType() { return _engineType; }
-    public void setEngineType(String engineType) { _engineType = engineType; }
+    public String vehicleType() {
+        return "Car";
+    }
 }

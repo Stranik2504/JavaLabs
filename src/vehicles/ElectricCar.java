@@ -10,4 +10,8 @@ public class ElectricCar extends Car {
         super();
         _engineType = "Electric";
     }
+    
+    public String vehicleType() {
+        return "Electric Car";
+    }
 }
