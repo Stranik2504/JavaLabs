@@ -11,7 +11,7 @@ public class Car extends Vehicle {
         setOwnerName("John Doe");
         setInsuranceNumber("1234567890");
         
-        _engineType = "Simple";
+        _engineType = "Combustion";
     }
     
     public String vehicleType() {

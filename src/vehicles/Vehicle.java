@@ -33,4 +33,18 @@ public abstract class Vehicle {
     public void setEngineType(String engineType) { _engineType = engineType; }
     
     public abstract String vehicleType();
+
+    public String toString() {
+        return 
+            "Model: " + _model + "\n" + 
+            "License: " + _license + "\n" + 
+            "Color: " + _color + "\n" + 
+            "Year: " + _year + "\n" +
+            "--------------------------\n" +
+            "Owner Name: " + _ownerName + "\n" + 
+            "Insurance Number: " + _insuranceNumber + "\n" + 
+            "Engine Type: " + _engineType + "\n" +
+            "--------------------------\n" +
+            "Vehicle Type: " + vehicleType();
+    } 
 }
