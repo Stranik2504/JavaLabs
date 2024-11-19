@@ -3,23 +3,19 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         var scanner = new Scanner(System.in);
-        var stack = new MyStack();
+        var queue = new MyQueue<>();
 
         for (var i = 0; i < 5; i++) {
             System.out.print("Введите строчку номер " + (i + 1) + ": ");
-            stack.push(scanner.next());
+            queue.enqueue(scanner.next());
         }
 
-        System.out.println("Структура выглядит так: " + stack);
+        System.out.println("Структура выглядит так: " + queue.toString());
         System.out.println("\n\nПолученный текст:");
-        
-        var newStack = (MyStack)stack.clone();
 
-        while (!stack.isEmpty()) {
-            var el = stack.pop();
+        while (!queue.isEmpty()) {
+            var el = queue.dequeue();
             System.out.println(el);
         }
-
-        System.out.println("Структура выглядит копии так: " + newStack);
     }
 }
